@@ -1,0 +1,81 @@
+// Visualize your database schema in the following
+// URL: https://dbdiagram.io/d
+// Docs: https://dbml.dbdiagram.io/docs
+
+Enum OrderStatus {
+  created
+  in_production
+  cancelled
+  finished
+}
+
+Enum PaymentStatus {
+  paid
+  refused
+  cancelled
+}
+
+Enum DiscountType {
+  percentage
+  fixed_value
+}
+
+Table Clients {
+  id            integer [primary key]
+  first_name    varchar
+  last_name     varchar
+  document      varchar [unique]
+  email         varchar [unique]
+  password_hash varchar [null]
+  phone_number  varchar
+}
+
+Table Addresses {
+  id           integer [primary key]
+  street       varcahr
+  number       varcahr
+  complement   varchar [null]
+  neighborhood varcahr
+  city         varcahr
+  state        varcahr
+  zipCode      varcahr
+  client_id    integer [ref: > Clients.id]
+}
+
+Table Products {
+  id          integer [primary key]
+  sku         varchar [unique]
+  name        varchar
+  image       blob
+  description varchar [null]
+  quantity    integer
+  price       float
+}
+
+Table OrderProduct {
+  id          integer [primary key]
+  extra_infos varchar [null]
+  quantity    integer
+  product_id  integer [ref: > Products.id]
+  order_id    integer [ref: > Orders.id]
+}
+
+Table Discounts {
+  id            integer [primary key]
+  discount_type DiscountType
+  value         float
+}
+
+Table Orders {
+  id integer [primary key]
+  total_discount float
+  extra_fee      float
+  shipping_value float
+  total_value    float
+  payment_status PaymentStatus
+  order_status   OrderStatus
+  client_id      integer [ref: > Clients.id]
+  address_id     integer [ref: > Addresses.id]
+  discount_id    integer [ref: > Discounts.id]
+}
+

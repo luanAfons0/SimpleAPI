@@ -1,0 +1,87 @@
+# Requirements Document System
+
+**Project Name:** \[PROJECT NAME\]
+
+**Authors:**
+
+- NAME 1
+- NAME 2
+- NAME 3
+- NAME 4
+- NAME 5
+
+1\. Introduction
+
+## 1.1 Context
+
+\[PROJECT CONTEXT - WHAT? WHEN? WHERE? WHAT PROBLEM DOES IT TRY TO SOLVE? - MINIMUM OF 5 LINES\]
+
+## 1.2 Objective
+
+\[PROPOSED SOLUTION. HOW CAN THE SYSTEM HELP SOLVE THE PROBLEM? - MINIMUM OF 5 LINES\]
+
+# 2\. Project Details
+
+## 2.1 Functional Requirements
+
+- **RF-01:** \[DESCRIBE FUNCTIONAL REQUIREMENTS - WHAT IS IT? WHAT WILL THE FUNCTIONALITY BE USED FOR?\]
+- **RF-02:** \[....\]
+- **RF-03:** \[....\]
+- **RF-04:** \[....\]
+- **RF-05:** \[....\]
+
+\[MINIMUM OF 5 WELL-EXPLAINED FUNCTIONAL REQUIREMENTS\]
+
+## 2.2 Non-Functional Requirements
+
+- **RNF-01:** \[DESCRIBE NON-FUNCTIONAL REQUIREMENTS - JUSTIFY THE NEED FOR THE REQUIREMENT\]
+- **RNF-02:** \[....\]
+- **RNF-03:** \[....\]
+
+\[MINIMUM OF 3 WELL-EXPLAINED FUNCTIONAL REQUIREMENTS\]
+
+## 2.3 User Characteristics
+
+\[DESCRIBE THE PROFILE OF THE USER WHO WILL USE THE SYSTEM AND WHICH PLATFORM WILL BE USED\]
+
+## 2.4 Technologies proposed for project execution
+
+- **Database:** \[WHAT TYPE OF DATABASE?\]
+- **Platform:** \[WHAT TYPE OF PLATFORM (DESKTOP, WEB, MOBILE)?\]
+- **Programming languages:** \[SUGGEST LANGUAGES AND FRAMEWORKS\]
+
+# 3\. Use Case Diagram
+
+## 3.1 \[NAME OF DIAGRAM\]
+
+\[CONTEXT AND EXPLANATION OF THE DIAGRAM\]
+
+\[IMAGE\]
+
+# 4\. Process Mappings (BPMN)
+
+## 4.1 \[NAME OF THE PROCESS\]
+
+\[CONTEXT AND EXPLANATION OF THE MAPPED PROCESS\]
+
+\[IMAGE\]
+
+\[MINIMUM 2 DIAGRAMS - MAIN PROCESSES \]
+
+# 5\. Class Diagram
+
+## 5.1 \[NAME OF CLASS DIAGRAM\]
+
+\[CONTEXT AND EXPLANATION OF CLASS DIAGRAM\]
+
+\[IMAGE\]
+
+# 6\. Prototypes
+
+## 6.1 \[NAME OF PROTOTYPE\]
+
+\[CONTEXT AND EXPLANATION OF PROTOTYPE\]
+
+\[IMAGE\]
+
+\[MINIMUM 2 PROTOTYPED SCREENS - MAIN PROCESSES \]
