@@ -26,7 +26,7 @@ Table Clients {
   last_name     varchar
   document      varchar [unique]
   email         varchar [unique]
-  password_hash varchar [null]
+  password varchar [null]
   phone_number  varchar
 }
 

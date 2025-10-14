@@ -18,8 +18,17 @@ export class Client {
   email!: string;
 
   @Property({ length: 60 })
-  passwordHash!: string;
+  password!: string;
 
   @Property({ length: 15 })
   phoneNumber!: string;
+
+  @Property({ nullable: true })
+  deletedAt?: Date;
+
+  @Property()
+  createdAt: Date = new Date();
+
+  @Property({ onUpdate: () => new Date() })
+  updatedAt: Date = new Date();
 }

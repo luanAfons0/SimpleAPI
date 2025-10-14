@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "type": "table",
+  "title": "Clients",
+  "hideInSidebar": false,
+  "config": {
+    "dataSource": "mysql_db_1m1wda",
+    "fetchStrategy": "databaseTable",
+    "table": "client",
+    "columns": [
+      {
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "column": "password"
+      },
+      {
+        "hiddenInTable": true,
+        "column": "deleted_at"
+      }
+    ],
+    "allowDelete": false
+  }
+}

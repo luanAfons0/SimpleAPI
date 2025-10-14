@@ -11,23 +11,25 @@
     "start": "node dist/server/server.cjs"
   },
   "dependencies": {
+    "@kottster/cli": "^3.x",
+    "@kottster/common": "^3.x",
+    "@kottster/react": "^3.x",
+    "@kottster/server": "^3.x",
+    "knex": "^3.1.0",
+    "mysql2": "^2.3.3",
     "react": "^19.x",
     "react-dom": "^19.x",
-    "react-router-dom": "^7.x",
-    "@kottster/common": "^3.x",
-    "@kottster/cli": "^3.x",
-    "@kottster/server": "^3.x",
-    "@kottster/react": "^3.x"
+    "react-router-dom": "^7.x"
   },
   "devDependencies": {
-    "vite": "^6.x",
-    "vite-tsconfig-paths": "^4.x",
+    "@types/node": "^20.x",
+    "@types/react": "^19.x",
+    "@types/react-dom": "^19.x",
     "@vitejs/plugin-react": "^4.x",
     "tsx": "^4.x",
     "typescript": "^5.x",
-    "@types/node": "^20.x",
-    "@types/react": "^19.x",
-    "@types/react-dom": "^19.x"
+    "vite": "^6.x",
+    "vite-tsconfig-paths": "^4.x"
   },
   "engines": {
     "node": ">=20"

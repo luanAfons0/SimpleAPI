@@ -5,8 +5,8 @@ export const app = createApp({
   schema,
 
   /* 
-  * For security, consider moving the secret key to an environment variable: 
-  * https://kottster.app/docs/deploying#before-you-deploy
-  */
-  secretKey: process.env.SECRET_KEY,
+   * For security, consider moving the secret key to an environment variable: 
+   * https://kottster.app/docs/deploying#before-you-deploy
+   */
+  secretKey: 'uVvUEyjemHcNH1j1tsYsUFqj',
 });

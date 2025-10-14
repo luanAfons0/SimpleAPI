@@ -6,7 +6,7 @@ import {
   MikroOrmHealthIndicator,
 } from '@nestjs/terminus';
 
-@Controller('health')
+@Controller('health-check')
 export class HealthController {
   constructor(
     private health: HealthCheckService,

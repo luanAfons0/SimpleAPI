@@ -1,33 +1,113 @@
-import { Injectable } from '@nestjs/common';
+import {
+  Body,
+  HttpException,
+  HttpStatus,
+  Inject,
+  Injectable,
+  Post,
+} from '@nestjs/common';
 import { CreateClientDto } from '../dto/create-client.dto';
 import { UpdateClientDto } from '../dto/update-client.dto';
-// import { EntityRepository } from '@mikro-orm/core';
-// import { Client } from '../entities/client.entity';
-// import { InjectRepository } from '@mikro-orm/nestjs';
+import { InjectRepository } from '@mikro-orm/nestjs';
+import { Client } from '../entities/client.entity';
+import { EntityRepository } from '@mikro-orm/core';
+import { BcryptService } from 'src/security/services/bcrypt.service';
+import { GetClientDTO } from '../dto/get-client.dto';
 
 @Injectable()
 export class ClientService {
-  constructor() {} // private readonly clientRepository: EntityRepository<Client>, // @InjectRepository(Client)
+  constructor(
+    @InjectRepository(Client)
+    private readonly clientRepository: EntityRepository<Client>,
+    @Inject()
+    private readonly bCryptService: BcryptService,
+  ) {}
 
-  create(createClientDto: CreateClientDto) {
-    console.log(createClientDto);
-    return 'This action adds a new client';
+  @Post()
+  async create(@Body() createClientDto: CreateClientDto) {
+    const hashedPassword =
+      (await this.bCryptService.hashPassword(
+        String(createClientDto?.password),
+      )) ?? '';
+
+    const newClient = this.clientRepository.create({
+      ...createClientDto,
+      password: hashedPassword,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+
+    const em = this.clientRepository.getEntityManager();
+    em.persist(newClient);
+    await em.flush();
+
+    return { message: 'Client created successfully' };
   }
 
-  findAll() {
-    return `This action returns all client`;
+  async findOne(id: number) {
+    const client = await this.clientRepository.findOne(
+      {
+        id: id,
+        deletedAt: null,
+      },
+      {
+        fields: ['firstName', 'lastName', 'email', 'document', 'phoneNumber'],
+      },
+    );
+
+    if (!client)
+      throw new HttpException('The client was not found', HttpStatus.NOT_FOUND);
+
+    const clientDto = new GetClientDTO(client);
+
+    return clientDto;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} client`;
+  async update(id: number, @Body() updateClientDto: UpdateClientDto) {
+    const client = await this.clientRepository.findOne(
+      {
+        id: id,
+      },
+      {
+        fields: ['firstName', 'lastName', 'email', 'document', 'phoneNumber'],
+      },
+    );
+
+    if (!client)
+      throw new HttpException('The client was not found', HttpStatus.NOT_FOUND);
+
+    ['firstName', 'lastName', 'email', 'document', 'phoneNumber'].map(
+      (value) => {
+        if (updateClientDto[value]) client[value] = updateClientDto[value];
+      },
+    );
+
+    const em = this.clientRepository.getEntityManager();
+    await em.flush();
+
+    return {
+      message: 'The client was updated successfully',
+    };
   }
 
-  update(id: number, updateClientDto: UpdateClientDto) {
-    console.log(updateClientDto);
-    return `This action updates a #${id} client`;
-  }
+  async remove(id: number) {
+    const clientToDelete = await this.clientRepository.findOne(
+      {
+        id: id,
+      },
+      {
+        fields: ['id', 'deletedAt'],
+      },
+    );
 
-  remove(id: number) {
-    return `This action removes a #${id} client`;
+    if (!clientToDelete)
+      throw new HttpException('The client was not found', HttpStatus.NOT_FOUND);
+
+    clientToDelete.deletedAt = new Date();
+
+    const em = this.clientRepository.getEntityManager();
+    await em.flush();
+
+    return { message: 'Client deleted successfully' };
   }
 }
