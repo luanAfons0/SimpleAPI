@@ -32,13 +32,13 @@ Table Clients {
 
 Table Addresses {
   id           integer [primary key]
-  street       varcahr
-  number       varcahr
+  street       varchar
+  number       varchar
   complement   varchar [null]
-  neighborhood varcahr
-  city         varcahr
-  state        varcahr
-  zipCode      varcahr
+  neighborhood varchar
+  city         varchar
+  state        varchar
+  zipCode      varchar
   client_id    integer [ref: > Clients.id]
 }
 
@@ -48,7 +48,7 @@ Table Products {
   name        varchar
   image       blob
   description varchar [null]
-  quantity    integer
+  stock    integer
   price       float
 }
 
@@ -58,12 +58,6 @@ Table OrderProduct {
   quantity    integer
   product_id  integer [ref: > Products.id]
   order_id    integer [ref: > Orders.id]
-}
-
-Table Discounts {
-  id            integer [primary key]
-  discount_type DiscountType
-  value         float
 }
 
 Table Orders {
@@ -76,6 +70,5 @@ Table Orders {
   order_status   OrderStatus
   client_id      integer [ref: > Clients.id]
   address_id     integer [ref: > Addresses.id]
-  discount_id    integer [ref: > Discounts.id]
 }
 
