@@ -12,25 +12,19 @@ Enum OrderStatus {
 Enum PaymentStatus {
   paid
   refused
-  cancelled
+  refunded
 }
 
-Enum DiscountType {
-  percentage
-  fixed_value
-}
-
-Table Clients {
+Table Client {
   id            integer [primary key]
-  first_name    varchar
-  last_name     varchar
+  name          varchar
+  client_type   varchar
   document      varchar [unique]
   email         varchar [unique]
-  password varchar [null]
   phone_number  varchar
 }
 
-Table Addresses {
+Table Address {
   id           integer [primary key]
   street       varchar
   number       varchar
@@ -38,37 +32,38 @@ Table Addresses {
   neighborhood varchar
   city         varchar
   state        varchar
-  zipCode      varchar
-  client_id    integer [ref: > Clients.id]
+  zip_code     varchar
+  client_id    integer [ref: > Client.id]
 }
 
-Table Products {
+Table Product {
   id          integer [primary key]
   sku         varchar [unique]
   name        varchar
-  image       blob
+  image_url   varchar
   description varchar [null]
-  stock    integer
-  price       float
+  stock       integer
+  price       double
 }
 
 Table OrderProduct {
-  id          integer [primary key]
-  extra_infos varchar [null]
-  quantity    integer
-  product_id  integer [ref: > Products.id]
-  order_id    integer [ref: > Orders.id]
+  id            integer [primary key]
+  extra_infos   varchar [null]
+  quantity      integer
+  product_price double
+  total_value   double
+  product_id    integer [ref: > Product.id]
+  order_id      integer [ref: > Order.id]
 }
 
-Table Orders {
-  id integer [primary key]
-  total_discount float
-  extra_fee      float
-  shipping_value float
-  total_value    float
+Table Order {
+  id             integer [primary key]
+  total_discount double [null]
+  extra_fee      double [null]
+  shipping_value double [null]
+  total_value    double
   payment_status PaymentStatus
   order_status   OrderStatus
-  client_id      integer [ref: > Clients.id]
-  address_id     integer [ref: > Addresses.id]
+  client_id      integer [ref: > Client.id]
+  address_id     integer [ref: > Address.id]
 }
-
