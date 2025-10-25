@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "type": "table",
+  "title": "Address",
+  "hideInSidebar": false,
+  "config": {
+    "dataSource": "mysql_db_umqdkp",
+    "fetchStrategy": "databaseTable",
+    "table": "address",
+    "columns": [
+      {
+        "hiddenInTable": true,
+        "column": "id"
+      },
+      {
+        "hiddenInForm": true,
+        "hiddenInTable": true,
+        "column": "deleted_at"
+      },
+      {
+        "hiddenInForm": true,
+        "hiddenInTable": true,
+        "column": "updated_at"
+      }
+    ]
+  }
+}
