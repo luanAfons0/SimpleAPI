@@ -1,4 +1,5 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, PrimaryKey, Property, Enum } from '@mikro-orm/core';
+import { ClientType } from '../enums/client-type.enum';
 
 @Entity()
 export class Client {
@@ -8,8 +9,8 @@ export class Client {
   @Property({ length: 100 })
   name!: string;
 
-  @Property({ length: 100 })
-  clientType!: string;
+  @Enum(() => ClientType)
+  clientType!: ClientType;
 
   @Property({ length: 14, unique: true })
   document!: string;
