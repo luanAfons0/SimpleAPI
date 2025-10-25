@@ -25,13 +25,16 @@
         },
         "client_type": {
           "name": "client_type",
-          "type": "varchar(100)",
+          "type": "enum('Pessoa física','Pessoa jurídica')",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "length": 100,
-          "mappedType": "string"
+          "enumItems": [
+            "Pessoa física",
+            "Pessoa jurídica"
+          ],
+          "mappedType": "enum"
         },
         "document": {
           "name": "document",

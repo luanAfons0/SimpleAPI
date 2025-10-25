@@ -8,7 +8,7 @@ import {
 import { CreateClientDto } from '../dto/create-client.dto';
 import { UpdateClientDto } from '../dto/update-client.dto';
 import { InjectRepository } from '@mikro-orm/nestjs';
-import { Client } from '../entities/client.entity';
+import { Client } from '../../entities/client.entity';
 import { EntityRepository } from '@mikro-orm/core';
 import { GetClientDTO } from '../dto/get-client.dto';
 

@@ -1,4 +1,5 @@
-import { IsString, Length } from 'class-validator';
+import { IsString, IsEnum, Length } from 'class-validator';
+import { ClientType } from 'src/enums/client-type.enum';
 
 export class CreateClientDto {
   @IsString()
@@ -7,11 +8,10 @@ export class CreateClientDto {
   })
   public readonly name: string;
 
-  @IsString()
-  @Length(2, 10, {
-    message: 'Client type length must be between 2 and 10 characters',
+  @IsEnum(ClientType, {
+    message: `Client type must be one of: ${Object.values(ClientType).join(', ')}`,
   })
-  public readonly clientType: string;
+  public readonly clientType: ClientType;
 
   @IsString()
   @Length(14, 14, { message: 'Document length must be equals to 14' })

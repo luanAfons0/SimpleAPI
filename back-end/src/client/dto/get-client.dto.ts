@@ -1,4 +1,4 @@
-import { Client } from '../entities/client.entity';
+import { Client } from '../../entities/client.entity';
 
 export class GetClientDTO {
   public readonly name: string;
