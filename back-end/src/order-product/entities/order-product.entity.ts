@@ -1,27 +1,25 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import { Product } from '../../product/entities/product.entity';
 
 @Entity()
-export class Product {
+export class OrderProduct {
   @PrimaryKey({ type: 'bigint' })
   id!: number;
 
-  @Property({ length: 50, unique: true })
-  sku!: string;
-
-  @Property({ length: 100 })
-  name!: string;
-
   @Property({ length: 255, nullable: true })
-  imageUrl!: string;
-
-  @Property({ length: 255, nullable: true })
-  description!: string;
+  extraInfos!: string;
 
   @Property({ type: 'integer' })
-  stock!: number;
+  quantity!: number;
 
   @Property({ type: 'decimal', precision: 10, scale: 2 })
-  price!: number;
+  productPrice!: number;
+
+  @Property({ type: 'decimal', precision: 10, scale: 2 })
+  totalValue!: number;
+
+  @ManyToOne(() => Product)
+  product!: Product;
 
   @Property({ nullable: true })
   deletedAt?: Date;
