@@ -4,20 +4,68 @@
   "title": "Clients",
   "hideInSidebar": false,
   "config": {
-    "dataSource": "mysql_db_1m1wda",
+    "dataSource": "mysql_db_umqdkp",
     "fetchStrategy": "databaseTable",
     "table": "client",
     "columns": [
       {
         "hiddenInTable": true,
-        "hiddenInForm": true,
-        "column": "password"
+        "position": 0,
+        "relationshipPreviewColumns": [],
+        "id": "id",
+        "column": "id"
       },
       {
+        "position": 1,
+        "relationshipPreviewColumns": [],
+        "id": "name",
+        "column": "name"
+      },
+      {
+        "position": 2,
+        "relationshipPreviewColumns": [],
+        "id": "client_type",
+        "column": "client_type"
+      },
+      {
+        "position": 3,
+        "relationshipPreviewColumns": [],
+        "id": "document",
+        "column": "document"
+      },
+      {
+        "position": 4,
+        "relationshipPreviewColumns": [],
+        "id": "email",
+        "column": "email"
+      },
+      {
+        "position": 5,
+        "relationshipPreviewColumns": [],
+        "id": "phone_number",
+        "column": "phone_number"
+      },
+      {
+        "position": 6,
+        "relationshipPreviewColumns": [],
+        "id": "created_at",
+        "column": "created_at"
+      },
+      {
+        "position": 7,
+        "relationshipPreviewColumns": [],
+        "id": "updated_at",
+        "column": "updated_at"
+      },
+      {
+        "position": 8,
+        "relationshipPreviewColumns": [],
+        "id": "deleted_at",
         "hiddenInTable": true,
+        "hiddenInForm": true,
         "column": "deleted_at"
       }
     ],
-    "allowDelete": false
+    "allowDelete": true
   }
 }

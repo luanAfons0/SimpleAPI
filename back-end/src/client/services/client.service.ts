@@ -2,7 +2,6 @@ import {
   Body,
   HttpException,
   HttpStatus,
-  Inject,
   Injectable,
   Post,
 } from '@nestjs/common';
@@ -11,7 +10,6 @@ import { UpdateClientDto } from '../dto/update-client.dto';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { Client } from '../entities/client.entity';
 import { EntityRepository } from '@mikro-orm/core';
-import { BcryptService } from 'src/security/services/bcrypt.service';
 import { GetClientDTO } from '../dto/get-client.dto';
 
 @Injectable()
@@ -19,20 +17,12 @@ export class ClientService {
   constructor(
     @InjectRepository(Client)
     private readonly clientRepository: EntityRepository<Client>,
-    @Inject()
-    private readonly bCryptService: BcryptService,
   ) {}
 
   @Post()
   async create(@Body() createClientDto: CreateClientDto) {
-    const hashedPassword =
-      (await this.bCryptService.hashPassword(
-        String(createClientDto?.password),
-      )) ?? '';
-
     const newClient = this.clientRepository.create({
       ...createClientDto,
-      password: hashedPassword,
       createdAt: new Date(),
       updatedAt: new Date(),
     });
@@ -51,7 +41,7 @@ export class ClientService {
         deletedAt: null,
       },
       {
-        fields: ['firstName', 'lastName', 'email', 'document', 'phoneNumber'],
+        fields: ['name', 'email', 'clientType', 'document', 'phoneNumber'],
       },
     );
 
@@ -69,7 +59,7 @@ export class ClientService {
         id: id,
       },
       {
-        fields: ['firstName', 'lastName', 'email', 'document', 'phoneNumber'],
+        fields: ['name', 'email', 'document', 'phoneNumber'],
       },
     );
 

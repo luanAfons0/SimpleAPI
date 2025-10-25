@@ -1,19 +1,17 @@
-import { Transform } from 'class-transformer';
 import { IsString, Length } from 'class-validator';
 
 export class CreateClientDto {
   @IsString()
   @Length(3, 50, {
-    message: 'The first name length must be between 3 and 50 characters',
+    message: 'The name length must be between 3 and 50 characters',
   })
-  @Transform(({ value }) => value.trim())
-  public readonly firstName: string;
+  public readonly name: string;
 
   @IsString()
-  @Length(3, 50, {
-    message: 'The last name length must be between 3 and 50 characters',
+  @Length(2, 10, {
+    message: 'Client type length must be between 2 and 10 characters',
   })
-  public readonly lastName: string;
+  public readonly clientType: string;
 
   @IsString()
   @Length(14, 14, { message: 'Document length must be equals to 14' })
@@ -28,8 +26,4 @@ export class CreateClientDto {
   @IsString()
   @Length(15, 15, { message: 'Phone number length must be 15 characters' })
   public readonly phoneNumber: string;
-
-  @IsString()
-  @Length(8, 20, { message: 'Password length must be between 8 and 20 cha' })
-  public readonly password?: string;
 }
