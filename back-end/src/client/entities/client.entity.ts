@@ -26,6 +26,10 @@ export class Client {
   @Property()
   createdAt: Date = new Date();
 
-  @Property({ onUpdate: () => new Date() })
-  updatedAt: Date = new Date();
+  @Property({
+    nullable: true,
+    onUpdate: () => new Date(),
+    onCreate: () => new Date(),
+  })
+  updatedAt?: Date = new Date();
 }
