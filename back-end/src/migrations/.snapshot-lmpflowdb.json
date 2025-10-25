@@ -13,24 +13,24 @@
           "length": null,
           "mappedType": "bigint"
         },
-        "first_name": {
-          "name": "first_name",
-          "type": "varchar(50)",
+        "name": {
+          "name": "name",
+          "type": "varchar(100)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "length": 50,
+          "length": 100,
           "mappedType": "string"
         },
-        "last_name": {
-          "name": "last_name",
-          "type": "varchar(50)",
+        "client_type": {
+          "name": "client_type",
+          "type": "varchar(100)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "length": 50,
+          "length": 100,
           "mappedType": "string"
         },
         "document": {
@@ -51,16 +51,6 @@
           "primary": false,
           "nullable": false,
           "length": 100,
-          "mappedType": "string"
-        },
-        "password": {
-          "name": "password",
-          "type": "varchar(60)",
-          "unsigned": false,
-          "autoincrement": false,
-          "primary": false,
-          "nullable": false,
-          "length": 60,
           "mappedType": "string"
         },
         "phone_number": {

@@ -1,24 +1,24 @@
 import { Client } from '../entities/client.entity';
 
 export class GetClientDTO {
-  public readonly firstName: string;
-  public readonly lastName: string;
+  public readonly name: string;
   public readonly email: string;
+  public readonly clientType: string;
   public readonly document: string;
   public readonly phoneNumber: string;
 
   constructor({
-    firstName,
-    lastName,
+    name,
     email,
+    clientType,
     document,
     phoneNumber,
   }: Pick<
     Client,
-    'firstName' | 'lastName' | 'email' | 'document' | 'phoneNumber'
+    'name' | 'email' | 'clientType' | 'document' | 'phoneNumber'
   >) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.name = name;
+    this.clientType = clientType;
     this.email = email;
     this.document = document;
     this.phoneNumber = phoneNumber;

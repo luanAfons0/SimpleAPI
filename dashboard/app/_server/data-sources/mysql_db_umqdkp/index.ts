@@ -11,7 +11,7 @@ const client = knex({
     port: 3306,
     user: 'root',
     password: 'root',
-    database: 'simpleDashDb',
+    database: 'lmpflowdb',
   },
 });
 
