@@ -5,6 +5,7 @@ import { HealthModule } from './health/health.module';
 import { ConfigModule } from '@nestjs/config';
 import { AddressesModule } from './address/address.module';
 import { ProductModule } from './product/product.module';
+import { OrderProductModule } from './order-product/order-product.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ProductModule } from './product/product.module';
     ClientModule,
     AddressesModule,
     ProductModule,
+    OrderProductModule,
   ],
   controllers: [],
   providers: [],
