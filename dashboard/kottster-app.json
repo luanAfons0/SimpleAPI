@@ -5,6 +5,7 @@
     "icon": "https://web.kottster.app/icon.png"
   },
   "menuPageOrder": [
-    "clients"
+    "clients",
+    "product"
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "type": "table",
+  "title": "Product",
+  "hideInSidebar": false,
+  "config": {
+    "dataSource": "mysql_db_umqdkp",
+    "fetchStrategy": "databaseTable",
+    "table": "product",
+    "columns": [
+      {
+        "hiddenInTable": true,
+        "column": "id"
+      },
+      {
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "column": "deleted_at"
+      },
+      {
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "column": "updated_at"
+      }
+    ]
+  }
+}

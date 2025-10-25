@@ -4,6 +4,7 @@ import { ClientModule } from './client/client.module';
 import { HealthModule } from './health/health.module';
 import { ConfigModule } from '@nestjs/config';
 import { AddressesModule } from './address/address.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { AddressesModule } from './address/address.module';
     HealthModule,
     ClientModule,
     AddressesModule,
+    ProductModule,
   ],
   controllers: [],
   providers: [],
