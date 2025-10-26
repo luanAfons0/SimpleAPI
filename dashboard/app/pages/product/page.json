@@ -21,6 +21,14 @@
         "hiddenInTable": true,
         "hiddenInForm": true,
         "column": "updated_at"
+      },
+      {
+        "prefix": "R$ ",
+        "column": "price"
+      },
+      {
+        "suffix": " un",
+        "column": "stock"
       }
     ]
   }
