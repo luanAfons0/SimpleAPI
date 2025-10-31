@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AddressesModule } from './address/address.module';
 import { ProductModule } from './product/product.module';
 import { OrderProductModule } from './order-product/order-product.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { OrderProductModule } from './order-product/order-product.module';
     AddressesModule,
     ProductModule,
     OrderProductModule,
+    OrderModule,
   ],
   controllers: [],
   providers: [],
