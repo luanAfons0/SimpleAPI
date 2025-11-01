@@ -1,0 +1,249 @@
+{
+  "version": "3.4",
+  "type": "table",
+  "icon": "truck",
+  "title": "Endereços",
+  "hideInSidebar": false,
+  "config": {
+    "dataSource": "mysql_db_609ei2",
+    "fetchStrategy": "databaseTable",
+    "table": "address",
+    "columns": [
+      {
+        "column": "id",
+        "label": "Id",
+        "hiddenInTable": false,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "formFieldPosition": 0,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "client_id",
+        "label": "Client",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "formFieldPosition": 1,
+        "relationshipPreviewColumns": [
+          "name"
+        ],
+        "fieldInput": {
+          "type": "recordSelect",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "zip_code",
+        "label": "Zip code",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 2,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "state",
+        "label": "State",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 3,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "city",
+        "label": "City",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 4,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "neighborhood",
+        "label": "Neighborhood",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 5,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "street",
+        "label": "Street",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 6,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "number",
+        "label": "Number",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 7,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "complement",
+        "label": "Complement",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 8,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "created_at",
+        "label": "Created at",
+        "hiddenInTable": false,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "formFieldPosition": 9,
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "updated_at",
+        "label": "Updated at",
+        "hiddenInTable": false,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "formFieldPosition": 10,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "deleted_at",
+        "label": "Deleted at",
+        "hiddenInTable": false,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "formFieldPosition": 11,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12"
+      }
+    ],
+    "nested": {
+      "client__p__client_id": {
+        "table": "client",
+        "fetchStrategy": "databaseTable",
+        "columns": [
+          {
+            "column": "id",
+            "hiddenInTable": true
+          },
+          {
+            "column": "created_at",
+            "hiddenInTable": false
+          },
+          {
+            "column": "deleted_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "updated_at",
+            "hiddenInTable": true
+          }
+        ],
+        "linkedRecordsColumns": [
+          {
+            "relationshipKey": "address__c__client_id",
+            "hiddenInTable": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -7,14 +7,18 @@
   "scripts": {
     "dev": "kottster dev",
     "dev:add-data-source": "kottster add-data-source",
+    "dev:upgrade-kottster": "kottster upgrade",
     "build": "vite build && kottster build:server",
     "start": "node dist/server/server.cjs"
   },
   "dependencies": {
-    "@kottster/cli": "^3.x",
-    "@kottster/common": "^3.x",
-    "@kottster/react": "^3.x",
-    "@kottster/server": "^3.x",
+    "@kottster/cli": "3.4.2",
+    "@kottster/common": "3.4.2",
+    "@kottster/react": "3.4.2",
+    "@kottster/server": "3.4.2",
+    "@mantine/core": "^8.3.6",
+    "@mantine/hooks": "^8.3.6",
+    "better-sqlite3": "^12.x",
     "knex": "^3.1.0",
     "mysql2": "^2.3.3",
     "react": "^19.x",
@@ -22,12 +26,8 @@
     "react-router-dom": "^7.x"
   },
   "devDependencies": {
-    "@types/node": "^20.x",
-    "@types/react": "^19.x",
-    "@types/react-dom": "^19.x",
     "@vitejs/plugin-react": "^4.x",
     "tsx": "^4.x",
-    "typescript": "^5.x",
     "vite": "^6.x",
     "vite-tsconfig-paths": "^4.x"
   },
