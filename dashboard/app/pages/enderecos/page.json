@@ -17,7 +17,7 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
-        "position": 0,
+        "position": 9,
         "formFieldPosition": 0,
         "relationshipPreviewColumns": [],
         "fieldInput": {
@@ -25,8 +25,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "id"
+        "formFieldSpan": "12"
       },
       {
         "column": "zip_code",
@@ -44,65 +43,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "zip_code"
-      },
-      {
-        "column": "city",
-        "label": "City",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": false,
-        "searchable": true,
-        "position": 2,
-        "formFieldPosition": 3,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "city"
-      },
-      {
-        "column": "neighborhood",
-        "label": "Neighborhood",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": false,
-        "searchable": true,
-        "position": 3,
-        "formFieldPosition": 4,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "neighborhood"
-      },
-      {
-        "column": "number",
-        "label": "Number",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": false,
-        "searchable": true,
-        "position": 4,
-        "formFieldPosition": 7,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "number"
+        "formFieldSpan": "12"
       },
       {
         "column": "state",
@@ -120,8 +61,43 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "state"
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "city",
+        "label": "City",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "position": 2,
+        "formFieldPosition": 3,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "neighborhood",
+        "label": "Neighborhood",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "position": 3,
+        "formFieldPosition": 4,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
       },
       {
         "column": "street",
@@ -139,8 +115,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "street"
+        "formFieldSpan": "12"
       },
       {
         "column": "complement",
@@ -158,14 +133,51 @@
           "asArray": false
         },
         "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "complement"
+        "formFieldSpan": "12"
       },
       {
-        "column": "created_at",
-        "label": "Created at",
-        "hiddenInTable": true,
-        "hiddenInForm": true,
+        "column": "number",
+        "label": "Number",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "position": 4,
+        "formFieldPosition": 7,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "client_id",
+        "label": "Client",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 0,
+        "formFieldPosition": 8,
+        "relationshipPreviewColumns": [
+          "name"
+        ],
+        "fieldInput": {
+          "type": "recordSelect",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "deleted_at",
+        "label": "Deleted at",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
         "filterable": true,
         "sortable": true,
         "searchable": false,
@@ -176,32 +188,12 @@
           "type": "dateTimePicker",
           "asArray": false
         },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "created_at"
-      },
-      {
-        "column": "deleted_at",
-        "label": "Deleted at",
-        "hiddenInTable": true,
-        "hiddenInForm": true,
-        "filterable": true,
-        "sortable": true,
-        "searchable": false,
-        "position": 9,
-        "formFieldPosition": 11,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "dateTimePicker",
-          "asArray": false
-        },
         "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "deleted_at"
+        "formFieldSpan": "12"
       },
       {
-        "column": "updated_at",
-        "label": "Updated at",
+        "column": "created_at",
+        "label": "Created at",
         "hiddenInTable": true,
         "hiddenInForm": true,
         "filterable": true,
@@ -214,28 +206,26 @@
           "type": "dateTimePicker",
           "asArray": false
         },
-        "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "updated_at"
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
       },
       {
-        "column": "client_id",
-        "label": "Client",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
+        "column": "updated_at",
+        "label": "Updated at",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
         "position": 11,
-        "formFieldPosition": 8,
-        "relationshipPreviewColumns": ["name"],
+        "formFieldPosition": 11,
+        "relationshipPreviewColumns": [],
         "fieldInput": {
-          "type": "recordSelect",
+          "type": "dateTimePicker",
           "asArray": false
         },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "client_id"
+        "fieldRequirement": "none",
+        "formFieldSpan": "12"
       }
     ],
     "nested": {
@@ -273,11 +263,24 @@
       {
         "relationshipKey": "order__c__address_id",
         "label": "Order",
-        "hiddenInTable": false,
+        "hiddenInTable": true,
         "position": 12,
         "id": "order__c__address_id"
       }
-    ]
+    ],
+    "views": [
+      {
+        "key": "view_kx8UGI",
+        "filteringStrategy": "filter",
+        "label": "Apagados",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNotNull"
+          }
+        ]
+      }
+    ],
+    "allowDelete": false
   }
 }
-

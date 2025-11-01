@@ -209,7 +209,20 @@
         "id": "order_product__c__product_id"
       }
     ],
-    "calculatedColumns": []
+    "calculatedColumns": [],
+    "views": [
+      {
+        "key": "view_EkA3T4",
+        "filteringStrategy": "filter",
+        "label": "Apagados",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNotNull"
+          }
+        ]
+      }
+    ],
+    "allowDelete": false
   }
 }
-

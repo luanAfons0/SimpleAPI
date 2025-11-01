@@ -133,33 +133,14 @@
         "id": "phone_number"
       },
       {
-        "column": "created_at",
-        "label": "Created at",
-        "hiddenInTable": true,
+        "column": "deleted_at",
+        "label": "Deleted at",
+        "hiddenInTable": false,
         "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
         "position": 8,
-        "formFieldPosition": 6,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "dateTimePicker",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "created_at"
-      },
-      {
-        "column": "deleted_at",
-        "label": "Deleted at",
-        "hiddenInTable": true,
-        "hiddenInForm": true,
-        "filterable": true,
-        "sortable": true,
-        "searchable": false,
-        "position": 9,
         "formFieldPosition": 7,
         "relationshipPreviewColumns": [],
         "fieldInput": {
@@ -169,6 +150,25 @@
         "fieldRequirement": "none",
         "formFieldSpan": "12",
         "id": "deleted_at"
+      },
+      {
+        "column": "created_at",
+        "label": "Created at",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 9,
+        "formFieldPosition": 6,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "created_at"
       },
       {
         "column": "updated_at",
@@ -207,8 +207,21 @@
         "id": "order__c__client_id"
       }
     ],
-    "allowDelete": false
+    "allowDelete": false,
+    "views": [
+      {
+        "id": "view_S3bIWK",
+        "key": "view_S3bIWK",
+        "filteringStrategy": "filter",
+        "label": "Apagados",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNotNull"
+          }
+        ]
+      }
+    ]
   },
   "icon": "users"
 }
-
