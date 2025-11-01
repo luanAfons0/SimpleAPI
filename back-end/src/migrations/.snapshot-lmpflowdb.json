@@ -690,6 +690,16 @@
           "length": null,
           "mappedType": "bigint"
         },
+        "order_id": {
+          "name": "order_id",
+          "type": "int",
+          "unsigned": true,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": null,
+          "mappedType": "integer"
+        },
         "deleted_at": {
           "name": "deleted_at",
           "type": "datetime",
@@ -734,6 +744,16 @@
           "unique": false
         },
         {
+          "columnNames": [
+            "order_id"
+          ],
+          "composite": false,
+          "keyName": "order_product_order_id_index",
+          "constraint": false,
+          "primary": false,
+          "unique": false
+        },
+        {
           "keyName": "PRIMARY",
           "columnNames": [
             "id"
@@ -756,6 +776,18 @@
             "id"
           ],
           "referencedTableName": "product",
+          "updateRule": "cascade"
+        },
+        "order_product_order_id_foreign": {
+          "constraintName": "order_product_order_id_foreign",
+          "columnNames": [
+            "order_id"
+          ],
+          "localTableName": "order_product",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "order",
           "updateRule": "cascade"
         }
       },

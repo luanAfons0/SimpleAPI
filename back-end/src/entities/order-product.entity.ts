@@ -1,5 +1,6 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
 import { Product } from './product.entity';
+import { Order } from './order.entity';
 
 @Entity()
 export class OrderProduct {
@@ -7,7 +8,7 @@ export class OrderProduct {
   id!: number;
 
   @Property({ length: 255, nullable: true })
-  extraInfos!: string;
+  extraInfos?: string;
 
   @Property({ type: 'integer' })
   quantity!: number;
@@ -20,6 +21,9 @@ export class OrderProduct {
 
   @ManyToOne(() => Product)
   product!: Product;
+
+  @ManyToOne(() => Order)
+  order!: Order;
 
   @Property({ nullable: true })
   deletedAt?: Date;

@@ -11,18 +11,13 @@ import { OrderProductService } from '../services/order-product.service';
 import { CreateOrderProductDto } from '../dto/create-order-product.dto';
 import { UpdateOrderProductDto } from '../dto/update-order-product.dto';
 
-@Controller('order-product')
+@Controller('order-products')
 export class OrderProductController {
   constructor(private readonly orderProductService: OrderProductService) {}
 
   @Post()
   create(@Body() createOrderProductDto: CreateOrderProductDto) {
     return this.orderProductService.create(createOrderProductDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.orderProductService.findAll();
   }
 
   @Get(':id')
