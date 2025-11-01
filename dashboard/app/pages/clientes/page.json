@@ -189,7 +189,8 @@
         "position": 7,
         "id": "address__c__client_id"
       }
-    ]
+    ],
+    "allowDelete": false
   },
   "icon": "users"
 }
