@@ -38,12 +38,12 @@
         },
         "document": {
           "name": "document",
-          "type": "varchar(14)",
+          "type": "varchar(19)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "length": 14,
+          "length": 19,
           "mappedType": "string"
         },
         "email": {

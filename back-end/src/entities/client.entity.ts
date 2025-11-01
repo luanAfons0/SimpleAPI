@@ -12,7 +12,7 @@ export class Client {
   @Enum(() => ClientType)
   clientType!: ClientType;
 
-  @Property({ length: 14, unique: true })
+  @Property({ length: 19, unique: true })
   document!: string;
 
   @Property({ length: 100, unique: true })
