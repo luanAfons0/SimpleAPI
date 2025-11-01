@@ -27,25 +27,6 @@
         "formFieldSpan": "12"
       },
       {
-        "column": "client_id",
-        "label": "Client",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": true,
-        "searchable": false,
-        "formFieldPosition": 1,
-        "relationshipPreviewColumns": [
-          "name"
-        ],
-        "fieldInput": {
-          "type": "recordSelect",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
-      },
-      {
         "column": "zip_code",
         "label": "Zip code",
         "hiddenInTable": false,
@@ -53,7 +34,7 @@
         "filterable": true,
         "sortable": false,
         "searchable": true,
-        "formFieldPosition": 2,
+        "formFieldPosition": 1,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "textarea",
@@ -70,7 +51,7 @@
         "filterable": true,
         "sortable": false,
         "searchable": true,
-        "formFieldPosition": 3,
+        "formFieldPosition": 2,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "textarea",
@@ -87,7 +68,7 @@
         "filterable": true,
         "sortable": false,
         "searchable": true,
-        "formFieldPosition": 4,
+        "formFieldPosition": 3,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "textarea",
@@ -104,7 +85,7 @@
         "filterable": true,
         "sortable": false,
         "searchable": true,
-        "formFieldPosition": 5,
+        "formFieldPosition": 4,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "textarea",
@@ -121,13 +102,30 @@
         "filterable": true,
         "sortable": false,
         "searchable": true,
-        "formFieldPosition": 6,
+        "formFieldPosition": 5,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "textarea",
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
+      },
+      {
+        "column": "complement",
+        "label": "Complement",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "formFieldPosition": 6,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
         "formFieldSpan": "12"
       },
       {
@@ -148,20 +146,22 @@
         "formFieldSpan": "12"
       },
       {
-        "column": "complement",
-        "label": "Complement",
+        "column": "client_id",
+        "label": "Client",
         "hiddenInTable": false,
         "hiddenInForm": false,
         "filterable": true,
-        "sortable": false,
-        "searchable": true,
+        "sortable": true,
+        "searchable": false,
         "formFieldPosition": 8,
-        "relationshipPreviewColumns": [],
+        "relationshipPreviewColumns": [
+          "name"
+        ],
         "fieldInput": {
-          "type": "textarea",
+          "type": "recordSelect",
           "asArray": false
         },
-        "fieldRequirement": "none",
+        "fieldRequirement": "notEmpty",
         "formFieldSpan": "12"
       },
       {
@@ -173,6 +173,7 @@
         "sortable": true,
         "searchable": false,
         "formFieldPosition": 9,
+        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
