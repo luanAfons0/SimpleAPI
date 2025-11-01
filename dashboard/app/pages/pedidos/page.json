@@ -1,0 +1,526 @@
+{
+  "version": "3.4",
+  "type": "table",
+  "title": "Pedidos",
+  "hideInSidebar": false,
+  "config": {
+    "dataSource": "mysql_db_12sini",
+    "fetchStrategy": "databaseTable",
+    "table": "order",
+    "columns": [
+      {
+        "column": "id",
+        "label": "Id",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 0,
+        "formFieldPosition": 8,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "id"
+      },
+      {
+        "column": "client_id",
+        "label": "Client",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 1,
+        "formFieldPosition": 0,
+        "relationshipPreviewColumns": [
+          "name"
+        ],
+        "fieldInput": {
+          "type": "recordSelect",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "client_id"
+      },
+      {
+        "column": "address_id",
+        "label": "Address",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 3,
+        "formFieldPosition": 1,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "recordSelect",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "address_id"
+      },
+      {
+        "column": "order_status",
+        "label": "Order status",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": false,
+        "position": 4,
+        "formFieldPosition": 3,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "select",
+          "options": [
+            {
+              "label": "Criado",
+              "value": "Criado"
+            },
+            {
+              "label": "Em produção",
+              "value": "Em produção"
+            },
+            {
+              "label": "Cancelado",
+              "value": "Cancelado"
+            },
+            {
+              "label": "Finalizado",
+              "value": "Finalizado"
+            }
+          ],
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "order_status"
+      },
+      {
+        "column": "payment_status",
+        "label": "Payment status",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": false,
+        "position": 5,
+        "formFieldPosition": 4,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "select",
+          "options": [
+            {
+              "label": "Pago",
+              "value": "Pago"
+            },
+            {
+              "label": "Recusado",
+              "value": "Recusado"
+            },
+            {
+              "label": "Reembolsado",
+              "value": "Reembolsado"
+            }
+          ],
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "payment_status"
+      },
+      {
+        "column": "total_value",
+        "label": "Total value",
+        "hiddenInTable": false,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 6,
+        "formFieldPosition": 7,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "total_value"
+      },
+      {
+        "column": "extra_fee",
+        "label": "Extra fee",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 7,
+        "formFieldPosition": 2,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "extra_fee"
+      },
+      {
+        "column": "shipping_value",
+        "label": "Shipping value",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 8,
+        "formFieldPosition": 5,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "shipping_value"
+      },
+      {
+        "column": "total_discount",
+        "label": "Total discount",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 9,
+        "formFieldPosition": 6,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "total_discount"
+      },
+      {
+        "column": "created_at",
+        "label": "Created at",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 10,
+        "formFieldPosition": 9,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "created_at"
+      },
+      {
+        "column": "deleted_at",
+        "label": "Deleted at",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 11,
+        "formFieldPosition": 10,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "deleted_at"
+      },
+      {
+        "column": "updated_at",
+        "label": "Updated at",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 12,
+        "formFieldPosition": 11,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "dateTimePicker",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "updated_at"
+      }
+    ],
+    "nested": {
+      "address__p__address_id": {
+        "table": "address",
+        "fetchStrategy": "databaseTable",
+        "columns": [
+          {
+            "column": "id",
+            "hiddenInTable": true
+          },
+          {
+            "column": "created_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "deleted_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "updated_at",
+            "hiddenInTable": true
+          }
+        ],
+        "linkedRecordsColumns": [
+          {
+            "relationshipKey": "order__c__address_id",
+            "hiddenInTable": true
+          }
+        ]
+      },
+      "order_product__c__order_id": {
+        "table": "order_product",
+        "fetchStrategy": "databaseTable",
+        "columns": [
+          {
+            "column": "id",
+            "label": "Id",
+            "hiddenInTable": false,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 0,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "numberInput",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "product_id",
+            "label": "Product",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 1,
+            "relationshipPreviewColumns": [
+              "name"
+            ],
+            "fieldInput": {
+              "type": "recordSelect",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "product_price",
+            "label": "Product price",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 2,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "textarea",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "quantity",
+            "label": "Quantity",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 3,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "numberInput",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "total_value",
+            "label": "Total value",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 4,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "textarea",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "extra_infos",
+            "label": "Extra infos",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": false,
+            "searchable": true,
+            "formFieldPosition": 5,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "textarea",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "created_at",
+            "label": "Created at",
+            "hiddenInTable": false,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 6,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "dateTimePicker",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "deleted_at",
+            "label": "Deleted at",
+            "hiddenInTable": false,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 7,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "dateTimePicker",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "updated_at",
+            "label": "Updated at",
+            "hiddenInTable": false,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 8,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "dateTimePicker",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "order_id",
+            "label": "Order",
+            "hiddenInTable": false,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 9,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "recordSelect",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          }
+        ]
+      },
+      "order_product__c__order_id___product__p__product_id": {
+        "table": "product",
+        "fetchStrategy": "databaseTable",
+        "columns": [
+          {
+            "column": "created_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "deleted_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "updated_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "id",
+            "hiddenInTable": true
+          },
+          {
+            "column": "image_url",
+            "hiddenInTable": true
+          }
+        ],
+        "linkedRecordsColumns": [
+          {
+            "relationshipKey": "order_product__c__product_id",
+            "hiddenInTable": true
+          }
+        ]
+      }
+    },
+    "calculatedColumns": [],
+    "linkedRecordsColumns": [
+      {
+        "relationshipKey": "order_product__c__order_id",
+        "label": "Order product",
+        "hiddenInTable": false,
+        "position": 2,
+        "id": "order_product__c__order_id"
+      }
+    ]
+  },
+  "icon": "creditCard"
+}

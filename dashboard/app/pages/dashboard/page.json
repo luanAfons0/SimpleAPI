@@ -1,0 +1,66 @@
+{
+  "version": "3.4",
+  "type": "dashboard",
+  "title": "Dashboard",
+  "hideInSidebar": false,
+  "config": {
+    "withDateRangePicker": false,
+    "stats": [
+      {
+        "key": "stat_sr693c",
+        "fetchStrategy": "rawSqlQuery",
+        "type": "single",
+        "dataSource": "mysql_db_12sini",
+        "title": "Clientes",
+        "sqlQuery": "SELECT COUNT(*) FROM client WHERE deleted_at IS NULL",
+        "span": "6",
+        "id": "stat_sr693c"
+      },
+      {
+        "key": "stat_69cw1a",
+        "fetchStrategy": "rawSqlQuery",
+        "type": "single",
+        "dataSource": "mysql_db_12sini",
+        "title": "Total em vendas",
+        "sqlQuery": "SELECT \n  REPLACE(FORMAT(SUM(op.quantity * op.product_price), 2), '.', ',') AS total_formatado\nFROM `order` o\nINNER JOIN order_product op ON op.order_id = o.id\nWHERE o.payment_status = 'Pago'\n  AND o.order_status = 'Finalizado'\n  AND o.deleted_at IS NULL AND op.deleted_at IS NULL",
+        "prefix": "R$",
+        "span": "6",
+        "id": "stat_69cw1a"
+      }
+    ],
+    "cards": [
+      {
+        "key": "card_ng59uz",
+        "fetchStrategy": "rawSqlQuery",
+        "type": "areaChart",
+        "dataSource": "mysql_db_12sini",
+        "values": [
+          {
+            "alias": "novos_clientes",
+            "color": "#0245ff"
+          }
+        ],
+        "dataKeyAlias": "dia",
+        "title": "Novos clientes (últimos 7 dias)",
+        "sqlQuery": "SELECT\n  DATE(created_at) AS dia,\n  COUNT(*) AS novos_clientes\nFROM client\nWHERE (created_at >= CURDATE() - INTERVAL 7 DAY)\nAND deleted_at IS NULL\nGROUP BY DATE(created_at)\nORDER BY dia ASC;",
+        "span": "6"
+      },
+      {
+        "key": "card_39323a",
+        "fetchStrategy": "rawSqlQuery",
+        "type": "areaChart",
+        "dataSource": "mysql_db_12sini",
+        "values": [
+          {
+            "alias": "novos_pedidos",
+            "color": "#0245ff"
+          }
+        ],
+        "dataKeyAlias": "dia",
+        "title": "Pedidos finalizados (últimos 7 dias)",
+        "sqlQuery": "SELECT\n  DATE(updated_at) AS dia,\n  COUNT(*) AS novos_pedidos\nFROM `order`\nWHERE updated_at >= CURDATE() - INTERVAL 7 DAY\nAND deleted_at IS NULL AND order_status = 'Finalizado'\nGROUP BY DATE(updated_at)\nORDER BY dia ASC;"
+      }
+    ]
+  },
+  "icon": "pieChart"
+}

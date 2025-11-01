@@ -3,3 +3,5 @@ nbuild
 npm-debug.log
 .DS_Store
 .cache
+**/dist/**
+app.db

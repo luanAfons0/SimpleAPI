@@ -5,7 +5,7 @@
   "title": "Endereços",
   "hideInSidebar": false,
   "config": {
-    "dataSource": "mysql_db_609ei2",
+    "dataSource": "mysql_db_12sini",
     "fetchStrategy": "databaseTable",
     "table": "address",
     "columns": [
@@ -228,9 +228,7 @@
         "searchable": false,
         "position": 11,
         "formFieldPosition": 8,
-        "relationshipPreviewColumns": [
-          "name"
-        ],
+        "relationshipPreviewColumns": ["name"],
         "fieldInput": {
           "type": "recordSelect",
           "asArray": false
@@ -282,3 +280,4 @@
     ]
   }
 }
+

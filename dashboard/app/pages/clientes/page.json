@@ -4,7 +4,7 @@
   "title": "Clientes",
   "hideInSidebar": false,
   "config": {
-    "dataSource": "mysql_db_609ei2",
+    "dataSource": "mysql_db_12sini",
     "fetchStrategy": "databaseTable",
     "table": "client",
     "columns": [
@@ -211,3 +211,4 @@
   },
   "icon": "users"
 }
+

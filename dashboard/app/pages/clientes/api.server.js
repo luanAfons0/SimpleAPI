@@ -1,6 +1,6 @@
 import { app } from "../../_server/app";
 
-import dataSource from "../../_server/data-sources/mysql_db_609ei2/";
+import dataSource from "../../_server/data-sources/mysql_db_12sini/";
 
 const knex = dataSource.getClient();
 
