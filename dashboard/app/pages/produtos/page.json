@@ -17,98 +17,16 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
+        "position": 0,
         "formFieldPosition": 0,
-        "fieldInput": {
-          "type": "numberInput",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
-      },
-      {
-        "column": "name",
-        "label": "Name",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": false,
-        "searchable": true,
-        "formFieldPosition": 1,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
-      },
-      {
-        "column": "sku",
-        "label": "Sku",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": false,
-        "searchable": true,
-        "formFieldPosition": 2,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
-      },
-      {
-        "column": "description",
-        "label": "Description",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": false,
-        "searchable": true,
-        "formFieldPosition": 3,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "none",
-        "formFieldSpan": "12"
-      },
-      {
-        "column": "price",
-        "label": "Price",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": true,
-        "searchable": false,
-        "formFieldPosition": 4,
-        "relationshipPreviewColumns": [],
-        "fieldInput": {
-          "type": "textarea",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
-      },
-      {
-        "column": "stock",
-        "label": "Stock",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": true,
-        "searchable": false,
-        "formFieldPosition": 5,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "numberInput",
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
+        "formFieldSpan": "12",
+        "id": "id"
       },
       {
         "column": "image_url",
@@ -118,29 +36,130 @@
         "filterable": true,
         "sortable": false,
         "searchable": true,
+        "position": 1,
         "formFieldPosition": 6,
+        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "textarea",
           "asArray": false
         },
         "fieldRequirement": "none",
-        "formFieldSpan": "12"
+        "formFieldSpan": "12",
+        "id": "image_url"
+      },
+      {
+        "column": "sku",
+        "label": "Sku",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "position": 2,
+        "formFieldPosition": 2,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "sku"
+      },
+      {
+        "column": "name",
+        "label": "Name",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "position": 3,
+        "formFieldPosition": 1,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "name"
+      },
+      {
+        "column": "description",
+        "label": "Description",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": false,
+        "searchable": true,
+        "position": 4,
+        "formFieldPosition": 3,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "none",
+        "formFieldSpan": "12",
+        "id": "description"
+      },
+      {
+        "column": "price",
+        "label": "Price",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 5,
+        "formFieldPosition": 4,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "textarea",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "price"
+      },
+      {
+        "column": "stock",
+        "label": "Stock",
+        "hiddenInTable": false,
+        "hiddenInForm": false,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 6,
+        "formFieldPosition": 5,
+        "relationshipPreviewColumns": [],
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "stock"
       },
       {
         "column": "created_at",
         "label": "Created at",
-        "hiddenInTable": false,
+        "hiddenInTable": true,
         "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
+        "position": 7,
         "formFieldPosition": 7,
+        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12"
+        "formFieldSpan": "12",
+        "id": "created_at"
       },
       {
         "column": "deleted_at",
@@ -150,13 +169,16 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
+        "position": 8,
         "formFieldPosition": 8,
+        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
         },
         "fieldRequirement": "none",
-        "formFieldSpan": "12"
+        "formFieldSpan": "12",
+        "id": "deleted_at"
       },
       {
         "column": "updated_at",
@@ -166,20 +188,27 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
+        "position": 9,
         "formFieldPosition": 9,
+        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
         },
         "fieldRequirement": "none",
-        "formFieldSpan": "12"
+        "formFieldSpan": "12",
+        "id": "updated_at"
       }
     ],
     "linkedRecordsColumns": [
       {
         "relationshipKey": "order_product__c__product_id",
-        "hiddenInTable": true
+        "label": "Order product",
+        "hiddenInTable": true,
+        "position": 10,
+        "id": "order_product__c__product_id"
       }
-    ]
+    ],
+    "calculatedColumns": []
   }
 }

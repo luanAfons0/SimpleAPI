@@ -28,7 +28,10 @@ export class OrderProduct {
   @Property({ nullable: true })
   deletedAt?: Date;
 
-  @Property()
+  @Property({
+    nullable: true,
+    onCreate: () => new Date(),
+  })
   createdAt: Date = new Date();
 
   @Property({
@@ -37,4 +40,5 @@ export class OrderProduct {
     onCreate: () => new Date(),
   })
   updatedAt?: Date = new Date();
-}   
+}
+

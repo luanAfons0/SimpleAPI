@@ -26,7 +26,10 @@ export class Product {
   @Property({ nullable: true })
   deletedAt?: Date;
 
-  @Property()
+  @Property({
+    nullable: true,
+    onCreate: () => new Date(),
+  })
   createdAt: Date = new Date();
 
   @Property({
