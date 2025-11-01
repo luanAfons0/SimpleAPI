@@ -2,14 +2,7 @@
   "id": "42c87802-5eac-4edc-ba4b-c13a139c1bb0",
   "meta": {
     "name": "LMP Flow",
-    "icon": "https://web.kottster.app/icon.png"
-  },
-  "navItems": [
-    {
-      "id": "clientes",
-      "name": "Clientes",
-      "icon": "users"
-    }
-  ]
+    "icon": "/logo.svg"
+  }
 }
 
