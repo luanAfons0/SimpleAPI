@@ -8,7 +8,10 @@ import { Address } from 'src/entities/address.entity';
 import { Client } from 'src/entities/client.entity';
 
 @Module({
-    imports: [MikroOrmModule.forFeature([Order, Address, Client]), SecurityModule],
+  imports: [
+    MikroOrmModule.forFeature([Order, Address, Client]),
+    SecurityModule,
+  ],
   controllers: [OrderController],
   providers: [OrderService],
 })

@@ -713,13 +713,187 @@
             "hiddenInTable": true
           }
         ]
+      },
+      "order_product__c__related_order_id": {
+        "table": "order_product",
+        "fetchStrategy": "databaseTable",
+        "columns": [
+          {
+            "column": "id",
+            "label": "Id",
+            "hiddenInTable": true,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 0,
+            "fieldInput": {
+              "type": "numberInput",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "product_id",
+            "label": "Product",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 1,
+            "relationshipPreviewColumns": [
+              "name"
+            ],
+            "fieldInput": {
+              "type": "recordSelect",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "extra_infos",
+            "label": "Extra infos",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": false,
+            "searchable": true,
+            "formFieldPosition": 2,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "textarea",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "product_price",
+            "label": "Product price",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 3,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "textarea",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "quantity",
+            "label": "Quantity",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 4,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "numberInput",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "total_value",
+            "label": "Total value",
+            "hiddenInTable": true,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 5,
+            "fieldInput": {
+              "type": "textarea",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "deleted_at",
+            "label": "Deleted at",
+            "hiddenInTable": false,
+            "hiddenInForm": false,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 6,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "dateTimePicker",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "created_at",
+            "label": "Created at",
+            "hiddenInTable": true,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 7,
+            "fieldInput": {
+              "type": "dateTimePicker",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "updated_at",
+            "label": "Updated at",
+            "hiddenInTable": true,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 8,
+            "fieldInput": {
+              "type": "dateTimePicker",
+              "asArray": false
+            },
+            "fieldRequirement": "none",
+            "formFieldSpan": "12"
+          },
+          {
+            "column": "related_order_id",
+            "label": "Related order",
+            "hiddenInTable": false,
+            "hiddenInForm": true,
+            "filterable": true,
+            "sortable": true,
+            "searchable": false,
+            "formFieldPosition": 9,
+            "relationshipPreviewColumns": [],
+            "fieldInput": {
+              "type": "recordSelect",
+              "asArray": false
+            },
+            "fieldRequirement": "notEmpty",
+            "formFieldSpan": "12"
+          }
+        ]
       }
     },
     "calculatedColumns": [
       {
         "label": "Valor do pedido",
         "alias": "order_value",
-        "sqlExpression": "SELECT \n  SUM(COALESCE(op.total_value,0)) *\n  SUM(COALESCE(op.quantity))\n  + COALESCE(main.extra_fee,0)\n  + COALESCE(main.shipping_value,0)\n  - COALESCE(main.total_discount,0)\nFROM order_product op\nWHERE op.order_id = main.id",
+        "sqlExpression": "SELECT \n  COALESCE(main.extra_fee,0)\n  + COALESCE(main.shipping_value,0)\n  - COALESCE(main.total_discount,0)\nFROM order_product op\nWHERE op.related_order_id = main.id",
         "position": 5
       }
     ],

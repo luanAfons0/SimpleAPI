@@ -690,8 +690,8 @@
           "length": null,
           "mappedType": "bigint"
         },
-        "order_id": {
-          "name": "order_id",
+        "related_order_id": {
+          "name": "related_order_id",
           "type": "int",
           "unsigned": true,
           "autoincrement": false,
@@ -745,10 +745,10 @@
         },
         {
           "columnNames": [
-            "order_id"
+            "related_order_id"
           ],
           "composite": false,
-          "keyName": "order_product_order_id_index",
+          "keyName": "order_product_related_order_id_index",
           "constraint": false,
           "primary": false,
           "unique": false
@@ -778,10 +778,10 @@
           "referencedTableName": "product",
           "updateRule": "cascade"
         },
-        "order_product_order_id_foreign": {
-          "constraintName": "order_product_order_id_foreign",
+        "order_product_related_order_id_foreign": {
+          "constraintName": "order_product_related_order_id_foreign",
           "columnNames": [
-            "order_id"
+            "related_order_id"
           ],
           "localTableName": "order_product",
           "referencedColumnNames": [

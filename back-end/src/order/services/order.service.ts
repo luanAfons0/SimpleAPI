@@ -18,20 +18,20 @@ export class OrderService {
     private readonly clientRepository: EntityRepository<Client>,
 
     @InjectRepository(Address)
-    private readonly addressRepository: EntityRepository<Address>
-  ) { }
+    private readonly addressRepository: EntityRepository<Address>,
+  ) {}
 
   async create(createOrderDto: CreateOrderDto) {
-    const client = await this.clientRepository.findOne(
-      { id: createOrderDto.clientId }
-    )
+    const client = await this.clientRepository.findOne({
+      id: createOrderDto.clientId,
+    });
 
     if (client == null)
       throw new HttpException('Client was not found', HttpStatus.NOT_FOUND);
 
-    const address = await this.addressRepository.findOne(
-      { id: createOrderDto.addressId }
-    )
+    const address = await this.addressRepository.findOne({
+      id: createOrderDto.addressId,
+    });
 
     if (address == null)
       throw new HttpException('Address was not found', HttpStatus.NOT_FOUND);
@@ -40,8 +40,8 @@ export class OrderService {
       ...createOrderDto,
       client,
       address,
-      createdAt: new Date,
-      updatedAt: new Date
+      createdAt: new Date(),
+      updatedAt: new Date(),
     });
 
     const em = this.orderRepository.getEntityManager();
@@ -54,7 +54,18 @@ export class OrderService {
   async findOne(id: number) {
     const order = await this.orderRepository.findOne(
       { id: id, deletedAt: null },
-      { fields: ['totalDiscount', 'extraFee', 'shippingValue', 'totalValue', 'paymentStatus', 'orderStatus', 'address', 'client'] }
+      {
+        fields: [
+          'totalDiscount',
+          'extraFee',
+          'shippingValue',
+          'totalValue',
+          'paymentStatus',
+          'orderStatus',
+          'address',
+          'client',
+        ],
+      },
     );
 
     if (!order)
@@ -68,45 +79,58 @@ export class OrderService {
   async update(id: number, updateOrderDto: UpdateOrderDto) {
     let client, address;
 
-    if (updateOrderDto.clientId)
-    {
-      client = await this.clientRepository.findOne(
-          { id: updateOrderDto.clientId }
-      )
+    if (updateOrderDto.clientId) {
+      client = await this.clientRepository.findOne({
+        id: updateOrderDto.clientId,
+      });
 
       if (client == null)
-          throw new HttpException('Client not found', HttpStatus.NOT_FOUND);
+        throw new HttpException('Client not found', HttpStatus.NOT_FOUND);
     }
 
-    if (updateOrderDto.addressId)
-    {
-      address = await this.addressRepository.findOne(
-          { id: updateOrderDto.addressId }
-      )
+    if (updateOrderDto.addressId) {
+      address = await this.addressRepository.findOne({
+        id: updateOrderDto.addressId,
+      });
 
       if (address == null)
-          throw new HttpException('Address not found', HttpStatus.NOT_FOUND);
+        throw new HttpException('Address not found', HttpStatus.NOT_FOUND);
     }
 
     const order = await this.orderRepository.findOne(
       { id: id },
-      { fields: ['totalDiscount', 'extraFee', 'shippingValue', 'totalValue', 'paymentStatus', 'orderStatus', 'client', 'address'] },
+      {
+        fields: [
+          'totalDiscount',
+          'extraFee',
+          'shippingValue',
+          'totalValue',
+          'paymentStatus',
+          'orderStatus',
+          'client',
+          'address',
+        ],
+      },
     );
 
     if (!order)
       throw new HttpException('Order not found', HttpStatus.NOT_FOUND);
 
-    if (client)
-      order.client = client;
+    if (client) order.client = client;
 
-    if (address)
-      order.address = address;
+    if (address) order.address = address;
 
-    ['totalDiscount', 'extraFee', 'shippingValue', 'totalValue', 'paymentStatus', 'orderStatus'].map(
-      (value) => {
-        if (updateOrderDto[value] != undefined) order[value] = updateOrderDto[value];
-      },
-    );
+    [
+      'totalDiscount',
+      'extraFee',
+      'shippingValue',
+      'totalValue',
+      'paymentStatus',
+      'orderStatus',
+    ].map((value) => {
+      if (updateOrderDto[value] != undefined)
+        order[value] = updateOrderDto[value];
+    });
 
     const em = this.orderRepository.getEntityManager();
     await em.flush();
@@ -119,7 +143,7 @@ export class OrderService {
   async remove(id: number) {
     const order = await this.orderRepository.findOne(
       { id: id, deletedAt: null },
-      { fields: ['id', 'deletedAt'] }
+      { fields: ['id', 'deletedAt'] },
     );
 
     if (!order)
@@ -133,3 +157,4 @@ export class OrderService {
     return { message: 'Order deleted successfully' };
   }
 }
+

@@ -1,14 +1,14 @@
 import { Order } from '../../entities/order.entity';
 
 export class GetOrderDto {
-    public readonly totalDiscount?: number;
-    public readonly extraFee?: number;
-    public readonly shippingValue?: number;
-    public readonly totalValue: number;
-    public readonly paymentStatus: string;
-    public readonly orderStatus: string;
-    public readonly addressId: number;
-    public readonly clientId: number;
+  public readonly totalDiscount?: number;
+  public readonly extraFee?: number;
+  public readonly shippingValue?: number;
+  public readonly totalValue: number;
+  public readonly paymentStatus: string;
+  public readonly orderStatus: string;
+  public readonly addressId: number;
+  public readonly clientId: number;
 
   constructor({
     totalDiscount,
@@ -18,8 +18,18 @@ export class GetOrderDto {
     paymentStatus,
     orderStatus,
     client,
-    address
-  }: Pick<Order, 'totalDiscount' | 'extraFee' | 'shippingValue' | 'totalValue' | 'paymentStatus' | 'orderStatus' | 'client' | 'address'>) {
+    address,
+  }: Pick<
+    Order,
+    | 'totalDiscount'
+    | 'extraFee'
+    | 'shippingValue'
+    | 'totalValue'
+    | 'paymentStatus'
+    | 'orderStatus'
+    | 'client'
+    | 'address'
+  >) {
     this.totalDiscount = totalDiscount;
     this.extraFee = extraFee;
     this.shippingValue = shippingValue;
@@ -30,3 +40,4 @@ export class GetOrderDto {
     this.clientId = client.id;
   }
 }
+

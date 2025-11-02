@@ -28,3 +28,4 @@ export class CreateOrderProductDto {
   @Min(1, { message: 'Order ID must be greater than 0' })
   public readonly orderId: number;
 }
+

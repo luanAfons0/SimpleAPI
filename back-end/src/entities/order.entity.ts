@@ -49,4 +49,3 @@ export class Order {
   })
   updatedAt?: Date = new Date();
 }
-

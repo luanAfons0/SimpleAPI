@@ -40,3 +40,4 @@ export class CreateOrderDto {
   @Min(1, { message: 'Address ID must be greater than 0' })
   public readonly addressId: number;
 }
+

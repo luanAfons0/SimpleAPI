@@ -23,7 +23,7 @@ export class OrderProduct {
   product!: Product;
 
   @ManyToOne(() => Order)
-  order!: Order;
+  relatedOrder!: Order;
 
   @Property({ nullable: true })
   deletedAt?: Date;
@@ -41,4 +41,3 @@ export class OrderProduct {
   })
   updatedAt?: Date = new Date();
 }
-
