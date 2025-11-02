@@ -42,7 +42,7 @@
         ],
         "dataKeyAlias": "dia",
         "title": "Novos clientes (últimos 7 dias)",
-        "sqlQuery": "SELECT\n  DATE(created_at) AS dia,\n  COUNT(*) AS novos_clientes\nFROM client\nWHERE (created_at >= CURDATE() - INTERVAL 7 DAY)\nAND deleted_at IS NULL\nGROUP BY DATE(created_at)\nORDER BY dia ASC;",
+        "sqlQuery": "SELECT\n  DATE(created_at) AS dia,\n  COUNT(*) AS novos_clientes\nFROM client\nWHERE (created_at >= CURDATE() - INTERVAL 9 DAY)\nAND deleted_at IS NULL\nGROUP BY DATE(created_at)\nORDER BY dia ASC;",
         "span": "6"
       },
       {
@@ -58,7 +58,24 @@
         ],
         "dataKeyAlias": "dia",
         "title": "Pedidos finalizados (últimos 7 dias)",
-        "sqlQuery": "SELECT\n  DATE(updated_at) AS dia,\n  COUNT(*) AS novos_pedidos\nFROM `order`\nWHERE updated_at >= CURDATE() - INTERVAL 7 DAY\nAND deleted_at IS NULL AND order_status = 'Finalizado'\nGROUP BY DATE(updated_at)\nORDER BY dia ASC;"
+        "sqlQuery": "SELECT\n  DATE(updated_at) AS dia,\n  COUNT(*) AS novos_pedidos\nFROM `order`\nWHERE updated_at >= CURDATE() - INTERVAL 9 DAY\nAND deleted_at IS NULL AND order_status = 'Finalizado'\nGROUP BY DATE(updated_at)\nORDER BY dia ASC;"
+      },
+      {
+        "key": "card_7k3wg3",
+        "fetchStrategy": "rawSqlQuery",
+        "type": "barChart",
+        "dataSource": "mysql_db_12sini",
+        "values": [
+          {
+            "alias": "vendas",
+            "color": "#0245ff"
+          }
+        ],
+        "dataKeyAlias": "dia",
+        "title": "Vendas (últimos 7 dias)",
+        "sqlQuery": "SELECT\n  DATE_FORMAT(DATE(o.updated_at), '%d/%m/%Y') AS dia,\n  SUM(op.quantity * op.product_price) AS vendas\nFROM `order` o\nINNER JOIN order_product op ON op.order_id = o.id\nWHERE (o.updated_at >= CURDATE() - INTERVAL 7 DAY)\nAND o.deleted_at IS NULL AND op.deleted_at IS NULL\nAND o.payment_status = 'Pago'\nand o.order_status = 'Finalizado'\nGROUP BY DATE(o.updated_at)\nORDER BY o.updated_at ASC;",
+        "valuePrefix": "R$",
+        "span": "12"
       }
     ]
   },
