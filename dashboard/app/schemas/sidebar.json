@@ -1,9 +1,4 @@
 {
-  "menuPageOrder": [
-    "clientes",
-    "enderecos",
-    "produtos",
-    "pedidos",
-    "dashboard"
-  ]
+  "menuPageOrder": ["clientes", "enderecos", "produtos", "pedidos", "dashboard"]
 }
+

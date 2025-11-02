@@ -126,7 +126,7 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
-        "position": 5,
+        "position": 4,
         "formFieldPosition": 1,
         "relationshipPreviewColumns": [],
         "fieldInput": {
@@ -136,24 +136,6 @@
         "fieldRequirement": "notEmpty",
         "formFieldSpan": "12",
         "id": "address_id"
-      },
-      {
-        "column": "total_value",
-        "label": "Total value",
-        "hiddenInTable": true,
-        "hiddenInForm": false,
-        "filterable": true,
-        "sortable": true,
-        "searchable": false,
-        "position": 6,
-        "formFieldPosition": 7,
-        "fieldInput": {
-          "type": "numberInput",
-          "asArray": false
-        },
-        "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "total_value"
       },
       {
         "column": "extra_fee",
@@ -232,6 +214,24 @@
         "id": "deleted_at"
       },
       {
+        "column": "total_value",
+        "label": "Total value",
+        "hiddenInTable": true,
+        "hiddenInForm": true,
+        "filterable": true,
+        "sortable": true,
+        "searchable": false,
+        "position": 11,
+        "formFieldPosition": 7,
+        "fieldInput": {
+          "type": "numberInput",
+          "asArray": false
+        },
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12",
+        "id": "total_value"
+      },
+      {
         "column": "created_at",
         "label": "Created at",
         "hiddenInTable": true,
@@ -239,7 +239,7 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
-        "position": 11,
+        "position": 12,
         "formFieldPosition": 9,
         "relationshipPreviewColumns": [],
         "fieldInput": {
@@ -258,7 +258,7 @@
         "filterable": true,
         "sortable": true,
         "searchable": false,
-        "position": 12,
+        "position": 13,
         "formFieldPosition": 11,
         "relationshipPreviewColumns": [],
         "fieldInput": {
@@ -716,13 +716,20 @@
         ]
       }
     },
-    "calculatedColumns": [],
+    "calculatedColumns": [
+      {
+        "label": "Valor do pedido",
+        "alias": "order_value",
+        "sqlExpression": "SELECT \n  SUM(COALESCE(op.total_value,0)) *\n  SUM(COALESCE(op.quantity))\n  + COALESCE(main.extra_fee,0)\n  + COALESCE(main.shipping_value,0)\n  - COALESCE(main.total_discount,0)\nFROM order_product op\nWHERE op.order_id = main.id",
+        "position": 5
+      }
+    ],
     "linkedRecordsColumns": [
       {
         "relationshipKey": "order_product__c__order_id",
         "label": "Order product",
         "hiddenInTable": false,
-        "position": 4,
+        "position": 6,
         "id": "order_product__c__order_id"
       }
     ],
