@@ -24,8 +24,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "id"
+        "formFieldSpan": "12"
       },
       {
         "column": "name",
@@ -43,8 +42,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "name"
+        "formFieldSpan": "12"
       },
       {
         "column": "client_type",
@@ -72,8 +70,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "client_type"
+        "formFieldSpan": "12"
       },
       {
         "column": "email",
@@ -91,8 +88,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "email"
+        "formFieldSpan": "12"
       },
       {
         "column": "document",
@@ -110,8 +106,7 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "document"
+        "formFieldSpan": "12"
       },
       {
         "column": "phone_number",
@@ -129,27 +124,25 @@
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "phone_number"
+        "formFieldSpan": "12"
       },
       {
         "column": "deleted_at",
         "label": "Deleted at",
         "hiddenInTable": false,
-        "hiddenInForm": true,
+        "hiddenInForm": false,
         "filterable": true,
         "sortable": true,
         "searchable": false,
         "position": 8,
-        "formFieldPosition": 7,
+        "formFieldPosition": 6,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
         },
         "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "deleted_at"
+        "formFieldSpan": "12"
       },
       {
         "column": "created_at",
@@ -160,15 +153,14 @@
         "sortable": true,
         "searchable": false,
         "position": 9,
-        "formFieldPosition": 6,
+        "formFieldPosition": 7,
         "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
         },
         "fieldRequirement": "notEmpty",
-        "formFieldSpan": "12",
-        "id": "created_at"
+        "formFieldSpan": "12"
       },
       {
         "column": "updated_at",
@@ -186,8 +178,7 @@
           "asArray": false
         },
         "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "updated_at"
+        "formFieldSpan": "12"
       }
     ],
     "calculatedColumns": [],
@@ -208,20 +199,7 @@
       }
     ],
     "allowDelete": false,
-    "views": [
-      {
-        "id": "view_S3bIWK",
-        "key": "view_S3bIWK",
-        "filteringStrategy": "filter",
-        "label": "Apagados",
-        "filterItems": [
-          {
-            "column": "deleted_at",
-            "operator": "isNotNull"
-          }
-        ]
-      }
-    ]
+    "views": []
   },
   "icon": "users"
 }

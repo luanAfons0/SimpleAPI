@@ -270,6 +270,17 @@
     ],
     "views": [
       {
+        "key": "view_QvNuaM",
+        "filteringStrategy": "filter",
+        "label": "Ativos",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNull"
+          }
+        ]
+      },
+      {
         "key": "view_kx8UGI",
         "filteringStrategy": "filter",
         "label": "Apagados",

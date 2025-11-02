@@ -198,13 +198,12 @@
         "column": "deleted_at",
         "label": "Deleted at",
         "hiddenInTable": false,
-        "hiddenInForm": true,
+        "hiddenInForm": false,
         "filterable": true,
         "sortable": true,
         "searchable": false,
         "position": 10,
         "formFieldPosition": 10,
-        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
@@ -734,6 +733,18 @@
       }
     ],
     "views": [
+      {
+        "id": "view_XO0pzS",
+        "key": "view_XO0pzS",
+        "filteringStrategy": "filter",
+        "label": "Ativos",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNull"
+          }
+        ]
+      },
       {
         "key": "view_CQcfv9",
         "filteringStrategy": "filter",
