@@ -151,14 +151,12 @@
         "searchable": false,
         "position": 7,
         "formFieldPosition": 2,
-        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "numberInput",
           "asArray": false
         },
-        "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "extra_fee"
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
       },
       {
         "column": "shipping_value",
@@ -170,14 +168,12 @@
         "searchable": false,
         "position": 8,
         "formFieldPosition": 5,
-        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "numberInput",
           "asArray": false
         },
-        "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "shipping_value"
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
       },
       {
         "column": "total_discount",
@@ -189,14 +185,12 @@
         "searchable": false,
         "position": 9,
         "formFieldPosition": 6,
-        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "numberInput",
           "asArray": false
         },
-        "fieldRequirement": "none",
-        "formFieldSpan": "12",
-        "id": "total_discount"
+        "fieldRequirement": "notEmpty",
+        "formFieldSpan": "12"
       },
       {
         "column": "deleted_at",
