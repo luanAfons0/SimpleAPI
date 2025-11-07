@@ -104,6 +104,10 @@
               "value": "Pago"
             },
             {
+              "label": "Pendente",
+              "value": "Pendente"
+            },
+            {
               "label": "Recusado",
               "value": "Recusado"
             },
@@ -808,7 +812,7 @@
             "column": "total_value",
             "label": "Total value",
             "hiddenInTable": true,
-            "hiddenInForm": false,
+            "hiddenInForm": true,
             "filterable": true,
             "sortable": true,
             "searchable": false,
@@ -817,7 +821,7 @@
               "type": "textarea",
               "asArray": false
             },
-            "fieldRequirement": "notEmpty",
+            "fieldRequirement": "none",
             "formFieldSpan": "12"
           },
           {
@@ -893,7 +897,7 @@
       {
         "label": "Valor do pedido",
         "alias": "order_value",
-        "sqlExpression": "SELECT \n  COALESCE(main.extra_fee,0)\n  + COALESCE(main.shipping_value,0)\n  - COALESCE(main.total_discount,0)\nFROM order_product op\nWHERE op.related_order_id = main.id",
+        "sqlExpression": "SELECT (\n  (SELECT \n    SUM(op.product_price) *\n    SUM(op.quantity)\n  FROM order_product op\n  WHERE op.related_order_id = main.id)\n  ) + main.extra_fee + main.shipping_value - total_discount",
         "position": 5
       }
     ],

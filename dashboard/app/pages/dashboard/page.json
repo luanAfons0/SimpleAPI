@@ -22,7 +22,7 @@
         "type": "single",
         "dataSource": "mysql_db_12sini",
         "title": "Total em vendas",
-        "sqlQuery": "SELECT \n  REPLACE(FORMAT(SUM(op.quantity * op.product_price), 2), '.', ',') AS total_formatado\nFROM `order` o\nINNER JOIN order_product op ON op.order_id = o.id\nWHERE o.payment_status = 'Pago'\n  AND o.order_status = 'Finalizado'\n  AND o.deleted_at IS NULL AND op.deleted_at IS NULL",
+        "sqlQuery": "SELECT \n  REPLACE(FORMAT(SUM(op.quantity * op.product_price), 2), '.', ',') AS total_formatado\nFROM `order` o\nINNER JOIN order_product op ON op.related_order_id = o.id\nWHERE o.payment_status = 'Pago'\n  AND o.order_status = 'Finalizado'\n  AND o.deleted_at IS NULL AND op.deleted_at IS NULL",
         "prefix": "R$",
         "span": "6",
         "id": "stat_69cw1a"

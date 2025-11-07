@@ -16,7 +16,7 @@ export class OrderProduct {
   @Property({ type: 'decimal', precision: 10, scale: 2 })
   productPrice!: number;
 
-  @Property({ type: 'decimal', precision: 10, scale: 2 })
+  @Property({ type: 'decimal', precision: 10, scale: 2, default: 0 })
   totalValue!: number;
 
   @ManyToOne(() => Product)

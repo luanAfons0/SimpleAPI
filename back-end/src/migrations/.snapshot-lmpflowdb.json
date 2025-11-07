@@ -355,12 +355,13 @@
         },
         "payment_status": {
           "name": "payment_status",
-          "type": "enum('Pago','Recusado','Reembolsado')",
+          "type": "enum('Pendente','Pago','Recusado','Reembolsado')",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
           "enumItems": [
+            "Pendente",
             "Pago",
             "Recusado",
             "Reembolsado"
@@ -678,6 +679,7 @@
           "nullable": false,
           "precision": 10,
           "scale": 2,
+          "default": "0",
           "mappedType": "decimal"
         },
         "product_id": {

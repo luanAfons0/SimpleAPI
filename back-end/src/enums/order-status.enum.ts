@@ -1,6 +1,7 @@
 export enum OrderStatus {
-    CREATED = 'Criado',
-    IN_PRODUCTION = 'Em produção',
-    CANCELLED = 'Cancelado',
-    FINISHED = 'Finalizado',
+  CREATED = 'Criado',
+  IN_PRODUCTION = 'Em produção',
+  CANCELLED = 'Cancelado',
+  FINISHED = 'Finalizado',
 }
+
