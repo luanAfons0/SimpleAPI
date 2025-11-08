@@ -195,8 +195,8 @@
       {
         "column": "deleted_at",
         "label": "Deleted at",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
+        "hiddenInTable": true,
+        "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
@@ -883,6 +883,34 @@
             },
             "fieldRequirement": "notEmpty",
             "formFieldSpan": "12"
+          }
+        ]
+      },
+      "client__p__client_id": {
+        "table": "client",
+        "fetchStrategy": "databaseTable",
+        "columns": [
+          {
+            "column": "created_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "deleted_at",
+            "hiddenInTable": true
+          },
+          {
+            "column": "updated_at",
+            "hiddenInTable": true
+          }
+        ],
+        "linkedRecordsColumns": [
+          {
+            "relationshipKey": "address__c__client_id",
+            "hiddenInTable": true
+          },
+          {
+            "relationshipKey": "order__c__client_id",
+            "hiddenInTable": true
           }
         ]
       }

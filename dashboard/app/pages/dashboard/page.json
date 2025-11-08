@@ -73,7 +73,7 @@
         ],
         "dataKeyAlias": "dia",
         "title": "Vendas (últimos 7 dias)",
-        "sqlQuery": "SELECT\n  DATE_FORMAT(DATE(o.updated_at), '%d/%m/%Y') AS dia,\n  SUM(op.quantity * op.product_price) AS vendas\nFROM `order` o\nINNER JOIN order_product op ON op.order_id = o.id\nWHERE (o.updated_at >= CURDATE() - INTERVAL 7 DAY)\nAND o.deleted_at IS NULL AND op.deleted_at IS NULL\nAND o.payment_status = 'Pago'\nand o.order_status = 'Finalizado'\nGROUP BY DATE(o.updated_at)\nORDER BY o.updated_at ASC;",
+        "sqlQuery": "SELECT\n  DATE_FORMAT(DATE(o.updated_at), '%d/%m/%Y') AS dia,\n  SUM(op.quantity * op.product_price) AS vendas\nFROM `order` o\nINNER JOIN order_product op ON op.related_order_id= o.id\nWHERE (o.updated_at >= CURDATE() - INTERVAL 7 DAY)\nAND o.deleted_at IS NULL AND op.deleted_at IS NULL\nAND o.payment_status = 'Pago'\nand o.order_status = 'Finalizado'\nGROUP BY DATE(o.updated_at)\nORDER BY o.updated_at ASC;",
         "valuePrefix": "R$",
         "span": "12"
       }

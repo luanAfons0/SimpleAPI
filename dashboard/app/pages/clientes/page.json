@@ -129,14 +129,13 @@
       {
         "column": "deleted_at",
         "label": "Deleted at",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
+        "hiddenInTable": true,
+        "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
         "position": 8,
         "formFieldPosition": 6,
-        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
@@ -198,8 +197,33 @@
         "id": "order__c__client_id"
       }
     ],
-    "allowDelete": false,
-    "views": []
+    "views": [
+      {
+        "id": "view_s2is3w",
+        "key": "view_s2is3w",
+        "filteringStrategy": "filter",
+        "label": "Ativos",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNull"
+          }
+        ]
+      },
+      {
+        "id": "view_xzC7wv",
+        "key": "view_xzC7wv",
+        "filteringStrategy": "filter",
+        "label": "Apagados",
+        "filterItems": [
+          {
+            "column": "deleted_at",
+            "operator": "isNotNull"
+          }
+        ]
+      }
+    ],
+    "allowDelete": false
   },
   "icon": "users"
 }

@@ -1,5 +1,6 @@
 import { TablePage } from "@kottster/react";
 import { Input } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 
 const handleAutocompleteZipCode = async (cep) => {
   if (!cep) return;
@@ -27,6 +28,22 @@ const formatCep = (value, setValue) => {
 
 export default () => (
   <TablePage
+    customBulkActions={[
+      {
+        color: "red",
+        label: "Apagar endereço(s)",
+        procedure: "removeEntity",
+        onResult: (result) => {
+          if (result.success) {
+            notifications.show({
+              title: "Success",
+              message: `O endereço foi apagado com sucesso!`,
+              color: "green",
+            });
+          }
+        },
+      },
+    ]}
     columnOverrides={{
       // Add function to auto complete zip code
       zip_code: (column) => ({

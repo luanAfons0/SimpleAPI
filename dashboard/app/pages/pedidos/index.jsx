@@ -5,6 +5,20 @@ export default () => (
   <TablePage
     customBulkActions={[
       {
+        color: "red",
+        label: "Apagar pedido(s)",
+        procedure: "removeEntity",
+        onResult: (result) => {
+          if (result.success) {
+            notifications.show({
+              title: "Success",
+              message: `O pedido foi apagado com sucesso!`,
+              color: "green",
+            });
+          }
+        },
+      },
+      {
         color: "green",
         label: "Atualiza estoque",
         procedure: "updateStock",

@@ -176,14 +176,13 @@
       {
         "column": "deleted_at",
         "label": "Deleted at",
-        "hiddenInTable": false,
-        "hiddenInForm": false,
+        "hiddenInTable": true,
+        "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
         "position": 8,
         "formFieldPosition": 9,
-        "relationshipPreviewColumns": [],
         "fieldInput": {
           "type": "dateTimePicker",
           "asArray": false
@@ -235,11 +234,11 @@
         "columns": [
           {
             "column": "id",
-            "hiddenInTable": true
+            "hiddenInTable": false
           },
           {
             "column": "created_at",
-            "hiddenInTable": false
+            "hiddenInTable": true
           },
           {
             "column": "deleted_at",
@@ -253,6 +252,10 @@
         "linkedRecordsColumns": [
           {
             "relationshipKey": "address__c__client_id",
+            "hiddenInTable": true
+          },
+          {
+            "relationshipKey": "order__c__client_id",
             "hiddenInTable": true
           }
         ]

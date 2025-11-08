@@ -7,6 +7,17 @@ const knex = dataSource.getClient();
 const controller = app.defineTableController(
   {},
   {
+    removeEntity: async (records) => {
+      records.map(async (record) => {
+        await knex("order")
+          .update({
+            deleted_at: new Date(),
+          })
+          .where("id", record.id);
+      });
+
+      return { success: true };
+    },
     updateStock: async (records) => {
       records.map(async (record) => {
         try {

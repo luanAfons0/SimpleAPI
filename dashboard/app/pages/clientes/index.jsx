@@ -1,5 +1,6 @@
 import { TablePage } from "@kottster/react";
 import { Input } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 
 const formatPhoneNumber = (value) => {
   if (!value) return value;
@@ -24,7 +25,7 @@ const formatPhoneNumber = (value) => {
   )}-${phoneNumber.slice(7, 11)}`;
 };
 
-export const formatDocument = (value) => {
+const formatDocument = (value) => {
   if (!value) return value;
 
   if (value.length == 11) {
@@ -43,6 +44,22 @@ export const formatDocument = (value) => {
 
 export default () => (
   <TablePage
+    customBulkActions={[
+      {
+        color: "red",
+        label: "Apagar cliente(s)",
+        procedure: "removeEntity",
+        onResult: (result) => {
+          if (result.success) {
+            notifications.show({
+              title: "Success",
+              message: `O cliente foi apagado com sucesso!`,
+              color: "green",
+            });
+          }
+        },
+      },
+    ]}
     columnOverrides={{
       // Add function to format document
       document: (column) => ({

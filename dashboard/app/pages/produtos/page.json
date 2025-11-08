@@ -165,7 +165,7 @@
         "column": "deleted_at",
         "label": "Deleted at",
         "hiddenInTable": true,
-        "hiddenInForm": false,
+        "hiddenInForm": true,
         "filterable": true,
         "sortable": true,
         "searchable": false,
