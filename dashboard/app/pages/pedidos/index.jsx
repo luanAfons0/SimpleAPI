@@ -20,7 +20,7 @@ export default () => (
       },
       {
         color: "green",
-        label: "Atualiza estoque",
+        label: "Atualizar estoque",
         procedure: "updateStock",
         onResult: (result) => {
           if (result.success) {

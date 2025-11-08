@@ -822,12 +822,11 @@
             "column": "deleted_at",
             "label": "Deleted at",
             "hiddenInTable": false,
-            "hiddenInForm": false,
+            "hiddenInForm": true,
             "filterable": true,
             "sortable": true,
             "searchable": false,
             "formFieldPosition": 6,
-            "relationshipPreviewColumns": [],
             "fieldInput": {
               "type": "dateTimePicker",
               "asArray": false
